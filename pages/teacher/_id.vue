@@ -17,7 +17,7 @@
             <h3 class="hLh30">
               <span class="fsize24 c-333">{{ teacher.name }}
                 &nbsp;
-                {{ teacher.level===1?'高级讲师':'首席讲师' }}
+                {{ teacher.level === 1 ? '高级讲师' : '首席讲师' }}
               </span>
             </h3>
             <section class="mt10">
@@ -43,7 +43,7 @@
             </section>
           </header>
           <!-- 无数据提示 开始-->
-          <section v-if="courseList.total==0" class="no-data-wrap">
+          <section v-if="courseList.length===0" class="no-data-wrap">
             <em class="icon30 no-data-ico">&nbsp;</em>
             <span class="c-666 fsize14 ml10 vam">没有相关数据，小编正在努力整理中...</span>
           </section>
@@ -79,16 +79,18 @@
   </div>
 </template>
 <script>
-import teacher from '@/api/edu/teacher'
+import teacherApi from "@/api/teacher";
+
 export default {
-  asyncData({ params, error }) {
-    return teacher.getById(params.id).then(response => {
-      console.log(response)
-      return {
-        teacher: response.data.data.teacher,
-        courseList: response.data.data.courseList
-      }
-    })
+  asyncData({params, error}) {
+    // 这个id不是随便写的，是根据地址栏url路径后的id
+    return teacherApi.getTeacherInfo(params.id)
+      .then(response => {
+        return {
+          teacher: response.data.data.teacher,
+          courseList: response.data.data.courseList
+        }
+      })
   }
 }
 </script>

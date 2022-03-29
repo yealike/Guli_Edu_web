@@ -118,7 +118,7 @@
                                   :href="'/player/'+video.videoSourceId"
                                   :title="video.title"
                                   target="_blank">
-                                  <span v-if="video.isFree === true" class="fr">
+                                  <span v-if="course.price === 0" class="fr">
                                     <i class="free-icon vam mr10">免费试听</i>
                                   </span>
                                   <em class="lh-menu-i-2 icon16 mr5">&nbsp;</em>{{ video.title }}
@@ -173,14 +173,13 @@
 </template>
 
 <script>
-import course from '@/api/edu/course'
+import courseApi from "@/api/courseApi";
 export default {
   asyncData({ params, error }) {
-    return course.getById(params.id).then(response => {
-      console.log(response)
+    return courseApi.getCourseInfoById(params.id).then(response => {
       return {
-        course: response.data.data,
-        chapterList: response.data.data.chapterList
+        course: response.data.data.courseWebVo,
+        chapterList: response.data.data.chapterVoList
       }
     })
   }
