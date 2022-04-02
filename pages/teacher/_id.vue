@@ -14,6 +14,7 @@
             <section class="t-infor-pic">
               <img :src="teacher.avatar" :alt="teacher.name">
             </section>
+
             <h3 class="hLh30">
               <span class="fsize24 c-333">{{ teacher.name }}
                 &nbsp;
@@ -54,7 +55,7 @@
               <li v-for="course in courseList" :key="course.id">
                 <div class="cc-l-wrap">
                   <section class="course-img">
-                    <img :src="course.cover" class="img-responsive">
+                    <img :src="course.cover" class="img-responsive" :alt="course.title">
                     <div class="cc-mask">
                       <a :href="'/course/'+course.id" title="开始学习" target="_blank" class="comm-btn c-btn-1">开始学习</a>
                     </div>

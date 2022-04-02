@@ -83,6 +83,7 @@
           <!-- 数据列表 开始-->
           <article v-if="data.total>0" class="comm-course-list">
             <ul id="bna" class="of">
+
               <!--课程列表展示-->
               <li v-for="item in data.courseList" :key="item.id">
                 <div class="cc-l-wrap">
@@ -109,6 +110,7 @@
                   </section>
                 </div>
               </li>
+
             </ul>
             <div class="clear"/>
           </article>

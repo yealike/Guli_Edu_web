@@ -31,6 +31,7 @@
             <article class="comm-course-list">
 
               <ul id="bna" class="of">
+
                 <li v-for="course in courseList" :key="course.id">
                   <div class="cc-l-wrap">
                     <section class="course-img">
@@ -58,12 +59,13 @@
                     </section>
                   </div>
                 </li>
+
               </ul>
 
               <div class="clear"/>
             </article>
             <section class="tac pt20">
-              <a href="#" title="全部课程" class="comm-btn c-btn-2">全部课程</a>
+              <a :href="'/course'" title="全部课程" class="comm-btn c-btn-2">全部课程</a>
             </section>
           </div>
         </section>
@@ -108,13 +110,14 @@
               <div class="clear"/>
             </article>
             <section class="tac pt20">
-              <a href="#" title="全部讲师" class="comm-btn c-btn-2">全部讲师</a>
+              <a :href="'/teacher'" title="全部讲师" class="comm-btn c-btn-2">全部讲师</a>
             </section>
           </div>
         </section>
       </div>
       <!-- /网校名师 结束 -->
     </div>
+
   </div>
 </template>
 

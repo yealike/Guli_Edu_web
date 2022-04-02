@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>视频播放</title>
+  <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.1/skins/default/aliplayer-min.css"/>
+  <script charset="utf-8" type="text/javascript"
+          src="https://g.alicdn.com/de/prismplayer/2.8.1/aliplayer-min.js"></script>
+</head>
+<body>
+<div id="J_prismPlayer" class="prism-player"></div>
+<script>
+  var player = new Aliplayer({
+    id: 'J_prismPlayer',
+    autoplay:false,
+    // 根据视频地址播放配置
+    source: 'https://outin-445870dea9a411ec9aea00163e1a625e.oss-cn-shanghai.aliyuncs.com/customerTrans/45534a39ec8adeeebb88b5b6a7c8952a/50f87f61-17fd0a4dfb3-0004-ea24-101-1ee19.mp4?Expires=1648553570&OSSAccessKeyId=LTAI8bKSZ6dKjf44&Signature=ojzF5eQR8IMHkh5%2BqotIQSKcs3k%3D',//播放地址，可以是第三方点播地址,或阿里云点播服务中的播放地址。
+
+
+  }, function (player) {
+    console.log('视频播放器创建好了')
+  });
+</script>
+</body>
+</html>

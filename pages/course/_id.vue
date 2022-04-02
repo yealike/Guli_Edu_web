@@ -155,7 +155,7 @@
                     <section class="hLh30 txtOf">
                       <a :href="'/teacher/'+course.teacherId" class="c-333 fsize16 fl" target="_blank">{{ course.teacherName }}</a>
                     </section>
-                    <section class="hLh20 txtOf">
+                    <section  class="hLh20 txtOf">
                       <span class="c-999">{{ course.intro }}</span>
                     </section>
                   </li>
